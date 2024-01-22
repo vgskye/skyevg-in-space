@@ -10,7 +10,7 @@ const { entries } = Astro.props as { entries: CollectionEntry<"ramblings">[] };
   {
     entries.map((entry) => (
       <li class="bg-mantle w-full p-4 rounded-xl">
-        <a href={`/ramblings/${entry.slug}`} class="contents">
+        <a href={`/ramblings/${entry.slug}`} class="block">
           <h2 class="text-lg font-bold">{entry.data.title}</h2>
           <p>{entry.data.summary}</p>
         </a>
