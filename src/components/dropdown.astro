@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="relative">
+  <button
+    id="dropdown-button"
+    aria-haspopup="menu"
+    aria-controls="dropdown-panel"
+    class="md:hidden inline-block p-2 hover:bg-surface2 hover:bg-opacity-50 rounded-lg text-lg"
+  >
+    <Icon
+      name="fluent:navigation-24-regular"
+      class="size-6"
+      aria-label="Menu"
+    />
+  </button>
+  <menu
+    id="dropdown-panel"
+    aria-expanded="false"
+    class="hidden absolute right-0 mt-2 w-fit rounded bg-surface0 shadow-md flex-col gap-1"
+  >
+    <slot />
+  </menu>
+  <script>
+    import "../scripts/dropdown";
+  </script>
+</div>

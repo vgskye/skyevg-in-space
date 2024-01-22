@@ -1,0 +1,36 @@
+{
+  "name": "skyevg-in-space",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write . --plugin=prettier-plugin-astro",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/tailwind": "^5.1.0",
+    "@catppuccin/tailwindcss": "^0.1.6",
+    "@catppuccin/vscode": "^3.11.0",
+    "@iconify-json/fluent": "^1.1.46",
+    "@tailwindcss/typography": "^0.5.10",
+    "astro": "^4.2.1",
+    "astro-compress": "^2.2.8",
+    "astro-icon": "^1.0.2",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^0.31.3",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0"
+  }
+}

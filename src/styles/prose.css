@@ -1,0 +1,33 @@
+table {
+  @apply !w-fit table-auto border-collapse;
+}
+
+thead {
+  @apply bg-mantle;
+}
+
+tr:nth-child(even) {
+  @apply bg-mantle p-2;
+}
+
+td:first-child,
+th:first-child {
+  @apply ps-2;
+}
+
+td:last-child,
+th:last-child {
+  @apply pe-2;
+}
+
+td,
+th {
+  @apply border border-surface1;
+}
+
+code::before,
+code::after,
+blockquote p:first-of-type::before,
+blockquote p:last-of-type::after {
+  content: none !important;
+}

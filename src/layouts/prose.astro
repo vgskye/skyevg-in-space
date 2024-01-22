@@ -1,0 +1,14 @@
+---
+import Base from "./base.astro";
+
+import "../styles/prose.css";
+
+const { title } = Astro.props;
+---
+
+<Base title={title}>
+  <slot name="extra-head" slot="extra-head" />
+  <div class="prose m-auto max-w-3xl">
+    <slot />
+  </div>
+</Base>

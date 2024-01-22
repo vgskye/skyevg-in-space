@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { Icon } from "astro-icon/components";
+
+const { entries } = Astro.props as { entries: CollectionEntry<"ramblings">[] };
+---
+
+<ul class="flex flex-col gap-2 w-full">
+  {
+    entries.map((entry) => (
+      <li class="bg-mantle w-full p-4 rounded-xl">
+        <a href={`/ramblings/${entry.slug}`} class="contents">
+          <h2 class="text-lg font-bold">{entry.data.title}</h2>
+          <p>{entry.data.summary}</p>
+        </a>
+        <div class="text-sm text-subtext1 flex gap-1 items-center">
+          <Icon name="fluent:tag-16-regular" class="size-5" aria-label="Tags" />
+          {entry.data.tags.map((tag) => (
+            <a class="text-blue" href={`/tagged/${tag}`}>
+              {tag}
+            </a>
+          ))}
+        </div>
+        <div class="text-sm text-subtext1 flex gap-1 items-center">
+          <Icon
+            name="fluent:calendar-date-20-regular"
+            class="size-5"
+            aria-label="Date"
+          />
+          {entry.data.date.toDateString()}
+        </div>
+      </li>
+    ))
+  }
+</ul>

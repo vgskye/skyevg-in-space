@@ -1,0 +1,24 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+export async function getStaticPaths() {
+  const entries = await getCollection("ramblings");
+  const tags = entries.flatMap((entry) => entry.data.tags);
+  return [...new Set(tags)].map((tag) => ({
+    params: { tag: tag },
+    props: {
+      entries: entries.filter((entry) => entry.data.tags.includes(tag)),
+    },
+  }));
+}
+
+import Base from "../../layouts/base.astro";
+import PostList from "../../components/post-list.astro";
+
+const { tag } = Astro.params;
+const { entries } = Astro.props as { entries: CollectionEntry<"ramblings">[] };
+---
+
+<Base title={`Articles tagged with ${tag}`}>
+  <h1 class="text-3xl font-extrabold mb-4">Articles tagged with {tag}</h1>
+  <PostList entries={entries} />
+</Base>

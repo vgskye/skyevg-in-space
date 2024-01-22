@@ -1,0 +1,13 @@
+---
+import Base from "../../layouts/base.astro";
+import PostList from "../../components/post-list.astro";
+
+import { getCollection } from "astro:content";
+
+const entries = await getCollection("ramblings");
+---
+
+<Base title="Ramblings">
+  <h1 class="text-3xl font-extrabold mb-4">Ramblings</h1>
+  <PostList entries={entries} />
+</Base>
