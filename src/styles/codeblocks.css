@@ -1,9 +1,10 @@
 .astro-code {
-  @apply !bg-mantle rounded w-fit p-3 m-2;
+  @apply !bg-crust rounded w-fit p-3 m-2;
 }
 
 :not(.astro-code) > code {
-  @apply bg-crust rounded p-1;
+  /* Fudge text color on latte, default text doesn't meet WCAG */
+  @apply bg-crust dark:text-text text-[#33364e] rounded p-1;
 }
 
 @media (prefers-color-scheme: dark) {
